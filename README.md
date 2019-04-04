@@ -15,6 +15,14 @@
   * `-r`: lsmodで依存関係を確認しながら外すこと
 * `insmod`,`rmmod`: 依存関係を考慮しない
 * `/lib/modules/$(uname -r)`: kernel modulesの配置場所
+* kernel headerの置き場
+```
+/usr/src/linux-headers-$(uname -r)/include
+```
+* モジュールのソースコードの検索
+```
+find . -name "*.h" -exec grep "nf_hook_ops" {} +
+```
 
 * kernel moduleの`Makefile`
   * `KERNEL_SRC`の先には`Makefile`があるはず
