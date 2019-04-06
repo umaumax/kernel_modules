@@ -149,3 +149,25 @@ sudo head /dev/srandom
 
 sudo rmmod srandom
 ```
+
+## kernel debug
+* kernel (moudle) symbolの一致確認方法
+```
+cat Module.symvers
+```
+
+* loadされているシンボルの一覧
+```
+cat /proc/kallsyms
+```
+
+* on host kernel info
+```
+readelf -n ./vmlinux
+file ./vmlinux
+```
+
+* on target kernel info
+```
+hexdump /sys/kernel/notes
+```
